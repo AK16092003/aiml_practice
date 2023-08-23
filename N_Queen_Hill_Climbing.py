@@ -1,4 +1,3 @@
-
 import random
 
 """
@@ -52,6 +51,8 @@ def printboard(cur_state):
         l[i][cur_state[i]] = 1
         print(*l[i])
     print()
+
+visited = {}
     
 while True:
     
@@ -59,9 +60,10 @@ while True:
     next_state = -1
     
     for neighbour in neighbour_states(cur_state):
-        if(cur_score >= score(neighbour)):
+        if(cur_score >= score(neighbour) and tuple(neighbour) not in visited):
             cur_score = score(neighbour)
             next_state = list(neighbour)
+            visited[tuple(neighbour)] = True
 
     if next_state == -1:
         if(cur_score == 0):
