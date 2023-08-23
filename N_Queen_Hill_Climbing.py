@@ -59,7 +59,7 @@ while True:
     next_state = -1
     
     for neighbour in neighbour_states(cur_state):
-        if(cur_score > score(neighbour)):
+        if(cur_score >= score(neighbour)):
             cur_score = score(neighbour)
             next_state = list(neighbour)
 
