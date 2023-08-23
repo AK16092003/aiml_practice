@@ -14,7 +14,7 @@ N = 8
 state = [1 for i in range(N)]
 
 def random_initial_state():
-    for i in range(8):
+    for i in range(N):
         state[i] = random.randint(0,N-1)
 
 
