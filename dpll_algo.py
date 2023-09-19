@@ -69,10 +69,10 @@ def find_pure_symbols(clause , symbol , model):
                 pos += 1
             if -x in cl:
                 neg += 1
-        if pos == 0:
+        if pos == 0 and neg > 0:
             symb.append(x)
             vals.append(False)
-        if neg == 0:
+        if neg == 0 and pos > 0:
             symb.append(x)
             vals.append(True)
 
@@ -160,7 +160,7 @@ def dpll(clause , symbol , model):
     
 
 clauses =[[1,2,3] , [1,2,-3] , [1,-2,3] , [1,-2,-3] , [-1,2,-3] , [-1,-2,3] , [-1,-2,-3] ]
-symbol = [1,2,3]
+symbol = [1,2,3,4,5]
 model = []
 
 ans = dpll(clauses , symbol , model)
