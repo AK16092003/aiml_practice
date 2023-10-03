@@ -26,18 +26,18 @@ To configure Couchbase as a minimal single node cluster, follow these steps:
 1. Create a bucket `internal-portal`. 
 2. Create `user` scope, create collections: `portfolio`  
 3. Create `organization` scope, create collections: `employee` , `organization` 
-4. Create primary index on each of the collections using following syntax:
-      ```CREATE PRIMARY INDEX ON `portfolio`;```;         
-      ```CREATE PRIMARY INDEX ON `employee`;```;        
-      ```CREATE PRIMARY INDEX ON `organization`;```;    
+4. Create primary index on each of the collections using following syntax:   
+      ```CREATE PRIMARY INDEX ON `portfolio`;```         
+      ```CREATE PRIMARY INDEX ON `employee`;```        
+      ```CREATE PRIMARY INDEX ON `organization`;```    
 
-5. Create secondary index on  (for production environment)
-    - `rollNo` field in `user` collection
+5. Create secondary index on  (for production environment)   
+    - `rollNo` field in `user` collection   
     ```CREATE INDEX rollNo ON `portfolio`(rollNo);```   
 
 6. Do the following for executing transactions without errors.     
     - `internal-portal` bucket &#8594; edit &#8594; advanced bucket settings.
-    - Under advanced bucket settings, Replicas: Enabled (disable this option)
+    - Under advanced bucket settings, Replicas: - [ ] Enabled (disable this option)
     - Under advanced bucket settings, set Minimum Durability Level as `Majority`
 
 7. Copy the couchbase connection string, username and password to `COUCHBASE_CONNECTION_STRING`, `COUCHBASE_USERNAME` and `COUCHBASE_PASSWORD`
