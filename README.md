@@ -37,7 +37,7 @@ To configure Couchbase as a minimal single node cluster, follow these steps:
 
 6. Do the following for executing transactions without errors.     
     - `internal-portal` bucket &#8594; edit &#8594; advanced bucket settings.
-    - Under advanced bucket settings, Replicas: - [ ] Enabled (disable this option)
+    - Under advanced bucket settings, Replicas: Enabled (disable this option)
     - Under advanced bucket settings, set Minimum Durability Level as `Majority`
 
 7. Copy the couchbase connection string, username and password to `COUCHBASE_CONNECTION_STRING`, `COUCHBASE_USERNAME` and `COUCHBASE_PASSWORD`
